@@ -1,0 +1,67 @@
+[
+    {
+      "pictureUrl": "https://example.com/teddybear1.jpg",
+      "toyName": "Cuddly Bear",
+      "price": 19.99,
+      "rating": 4.5,
+      "seller": "Toy Haven",
+      "subcategory": "Teddy Bear",
+      "availableQuantity": 20,
+      "sellerEmail": "toyhaven@example.com",
+      "detailDescription": "A soft and huggable teddy bear perfect for snuggling."
+    },
+    {
+      "pictureUrl": "https://example.com/teddybear2.jpg",
+      "toyName": "Sleepy Bear",
+      "price": 15.99,
+      "rating": 4.2,
+      "seller": "Bear Kingdom",
+      "subcategory": "Teddy Bear",
+      "availableQuantity": 10,
+      "sellerEmail": "bearkingdom@example.com",
+      "detailDescription": "This adorable teddy bear is perfect for naptime cuddles."
+    },
+    {
+      "pictureUrl": "https://example.com/teddybear3.jpg",
+      "toyName": "Giant Teddy",
+      "price": 49.99,
+      "rating": 4.8,
+      "seller": "Big Toy Emporium",
+      "subcategory": "Teddy Bear",
+      "availableQuantity": 5,
+      "sellerEmail": "bigtoyemporium@example.com",
+      "detailDescription": "A huge and lovable teddy bear that will bring joy to anyone."
+    },
+    {
+      "pictureUrl": "https://example.com/horse1.jpg",
+      "toyName": "Galloping Stallion",
+      "price": 29.99,
+      "rating": 4.2,
+      "seller": "Toy World",
+      "subcategory": "Horse",
+      "availableQuantity": 15,
+      "sellerEmail": "toyworld@example.com",
+      "detailDescription": "This horse toy features realistic galloping sounds and a beautiful mane."
+    },
+    {
+      "pictureUrl": "https://example.com/horse2.jpg",
+      "toyName": "Rainbow Unicorn",
+      "price": 39.99,
+      "rating": 4.6,
+      "seller": "Enchanted Toys",
+      "subcategory": "Horse",
+      "availableQuantity": 8,
+      "sellerEmail": "enchantedtoys@example.com",
+      "detailDescription": "A magical unicorn toy with a colorful rainbow mane and sparkly horn."
+    },
+    {
+      "pictureUrl": "https://example.com/horse3.jpg",
+      "toyName": "Western Rider",
+      "price": 24.99,
+      "rating": 4.0,
+      "seller": "Ranch Toys",
+      "subcategory": "Horse",
+      "availableQuantity": 12,
+      "sellerEmail": "ranchtoys@example.com",
+      "detailDescription": "Saddle up and ride with this realistic Western-style horse toy."
+    },
