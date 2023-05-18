@@ -42,16 +42,14 @@ detailDescription,
      })
 
    }
-
-
-        
     return (
         <div className="bg-base-200">
         <div className="">
 
           <div className="">
             <div className="card-body">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+              <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
+          ADD A NEW TOY FOR YOUR TOY COLLECTION</h2>
             <form onSubmit={handleSubmit} >
 
            <div className='md:grid md:grid-cols-3 gap-6'>
@@ -118,7 +116,7 @@ detailDescription,
                 <textarea  name='detailDescription' className="textarea" placeholder="Detail Description"></textarea>
               </div>
            </div>
-           <button className="btn btn-block btn-outline btn-secondary">block</button>
+           <button className="btn btn-block btn-outline btn-secondary">Add Now</button>
             
              
             </form>
