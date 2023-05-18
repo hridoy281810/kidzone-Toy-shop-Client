@@ -1,13 +1,17 @@
 import React, { useContext, useState } from 'react';
 import login from '../../assets/lotti/login.json'
 import Lottie from "lottie-react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
     const {loginUser,googleLogin} = useContext(AuthContext)
  const [error, setError] = useState('')
  const [success, setSuccess] = useState('')
+ const navigate = useNavigate();
+ const location = useLocation()
+ const from = location.state?.from?.pathname || '/';
+
     const handleLogin = event =>{
    event.preventDefault()
    const form = event.target;
@@ -24,7 +28,7 @@ const Login = () => {
     const loginUser = result.user;
     console.log(loginUser)
     setSuccess('You have successfully login, Welcome to our website')
-
+    navigate(from, { replace: true })
   })
   .catch(error => {
     const warning = error.message;
@@ -38,7 +42,7 @@ const Login = () => {
          const loginUser = result.user;
          console.log(loginUser)
          setSuccess('You have successfully login, Welcome to our website')
-     
+         navigate(from, { replace: true })
        })
        .catch(error => {
          const warning = error.message;

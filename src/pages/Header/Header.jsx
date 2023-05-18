@@ -23,7 +23,7 @@ const Header = () => {
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <li> <Link to='/'>Home</Link></li>
-        <li> <Link>All Toys</Link></li>
+        <li> <Link to='/allToys'>All Toys</Link></li>
         <li> <Link>My Toys</Link></li>
         <li> <Link>Add A Toy</Link></li>
         <li> <Link>Blogs</Link></li>
@@ -39,7 +39,7 @@ const Header = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu font-bold menu-horizontal px-1">
     <li> <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : 'default')}>Home</NavLink></li>
-      <li> <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}>All Toys</NavLink></li>
+      <li> <NavLink to='/allToys' className={({ isActive }) => (isActive ? 'active' : 'default')}>All Toys</NavLink></li>
       <li> <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}>My Toys</NavLink></li>
       <li> <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toy</NavLink></li>
       <li> <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>

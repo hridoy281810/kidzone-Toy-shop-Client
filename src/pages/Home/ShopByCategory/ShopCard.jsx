@@ -6,6 +6,7 @@ const ShopCard = ({toy}) => {
     const {_id,category,pictureUrl,toyName, price, rating, seller,  availableQuantity,
         sellerEmail,
         detailDescription} = toy;
+        
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
         <figure><img src={pictureUrl} alt="Shoes" /></figure>
