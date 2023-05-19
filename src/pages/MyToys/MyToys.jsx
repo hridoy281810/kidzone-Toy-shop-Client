@@ -52,15 +52,8 @@ const MyToys = () => {
   }
   return (
     <div className='container'>
-      <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
+      <h2 className='text-center text-4xl text-pink-600 font-bold mb-8 mt-4'>
         ALL TOYS IN MY STORE</h2>
-      <div className=" mt-4 mb-4 flex justify-center">
-        <select className="select select-secondary w-full max-w-xs">
-          <option disabled selected>Pick your favorite language</option>
-          <option>Java</option>
-          <option>Go</option>
-        </select>
-      </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
