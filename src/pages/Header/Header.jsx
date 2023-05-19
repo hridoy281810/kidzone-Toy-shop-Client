@@ -28,7 +28,7 @@ const Header = () => {
         <li> <Link to='/allToys'>All Toys</Link></li>
         <li> <Link to='/myToys'>My Toys</Link></li>
         <li> <Link to='/addToy'>Add A Toy</Link></li>
-        <li> <Link>Blogs</Link></li>
+        <li> <Link to='/blog'>Blogs</Link></li>
         
       </ul>
     </div>
@@ -50,7 +50,7 @@ const Header = () => {
       {
         user && <li> <NavLink  to='/addToy' className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toy</NavLink></li>
       }
-      <li> <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>
+      <li> <NavLink to='/blog' className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end res-end">
