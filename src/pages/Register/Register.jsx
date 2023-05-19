@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   const { createUser } = useContext(AuthContext)
@@ -28,7 +29,9 @@ const Register = () => {
       .then(result => {
         const createdUser = result.user;
         console.log(createdUser)
+         
         setSuccess('You have successfully created the account, Welcome to our website')
+       
       })
       .catch(error => {
         const warning = error.message;

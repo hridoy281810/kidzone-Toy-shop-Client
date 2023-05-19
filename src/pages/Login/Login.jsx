@@ -22,7 +22,7 @@ const Login = () => {
     console.log(email, password)
     setError('')
     setSuccess('')
-    if (password.length < 8) {
+    if (password.length < 6) {
       setError('Enter minimum six digit password')
     }
     loginUser(email, password)

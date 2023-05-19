@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateMyToy = () => {
   const toy = useLoaderData()
   useTitle('KidZone | Update Toy')
-  const { _id, toyName, price, rating, availableQuantity, } = toy;
+  const { _id, toyName, price, rating, availableQuantity,detailDescription } = toy;
   const handleUpdate = event => {
     event.preventDefault();
     const form = event.target;
@@ -24,7 +24,7 @@ const UpdateMyToy = () => {
       availableQuantity,
       detailDescription
     }
-    fetch(`http://localhost:5000/update/${_id}`, {
+    fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/update/${_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -93,7 +93,7 @@ const UpdateMyToy = () => {
                   <label className="label">
                     <span className="label-text">Detail Description</span>
                   </label>
-                  <textarea required name='detailDescription' className="textarea" placeholder="Detail Description"></textarea>
+                  <textarea  defaultValue={detailDescription} name='detailDescription' className="textarea" placeholder="Detail Description"></textarea>
                 </div>
               </div>
               <button className="btn mb-28 btn-block btn-outline btn-secondary">Update Now</button>

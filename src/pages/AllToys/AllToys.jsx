@@ -3,26 +3,34 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useTitle from '../../hooks/useTitle';
+import Loading from '../Loading/Loading';
 
 const AllToys = () => {
-  const {user} = useContext(AuthContext)
+  const {user,setLoading,loading} = useContext(AuthContext)
    const [allToys , setAllToys] = useState([])
    const [searchText,setSearchText] = useState('')
    useTitle('KidZone | All Toys') 
-
+ 
    useEffect(()=>{
-   fetch(`http://localhost:5000/allToys`,{
+    setLoading(true)
+   fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/allToys`,{
     method: 'GET'
    })
    .then(res => res.json())
    .then(data => {
     setAllToys(data)
+setLoading(false)
    console.log(data)
    })
+   
    },[])
+   if(loading){
+    return <Loading></Loading>
+    
+      }
 
    const handleSearchText = ()=>{
-    fetch(`http://localhost:5000/toyNameSearch/${searchText}`)
+    fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/toyNameSearch/${searchText}`)
     .then(res => res.json())
     .then(data => {
         setAllToys(data)
@@ -43,7 +51,7 @@ const AllToys = () => {
    }
     return (
      <div className='container'>
-    <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
+    <h2 className='text-center text-4xl text-pink-600 font-bold mb-8 mt-4'>
     ALL TOYS IN OUR STORE</h2>
     <div className="overflow-x-auto w-full">
   <div className='mb-4 flex justify-center items-center gap-2'>
@@ -68,7 +76,9 @@ const AllToys = () => {
                 {/* row 1 */}
                {
                 allToys.map((toy,i) => (
-                    <tr>
+
+                    <tr key={toy._id}>
+                     
                     <th>
                    {i + 1}
                     </th>

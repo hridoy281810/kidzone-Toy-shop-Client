@@ -3,23 +3,27 @@ import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useTitle from '../../hooks/useTitle';
+import Loading from '../Loading/Loading';
+import { key } from 'localforage';
 
 const MyToys = () => {
-  const { user, setLoading } = useContext(AuthContext)
+  const { user,setLoading,loading} = useContext(AuthContext)
   const [allToys, setToys] = useState([])
   useTitle('KidZone | My Toys')
 
   useEffect(() => {
-    setLoading(true)
-    fetch(`http://localhost:5000/myToys/${user?.email}`)
+setLoading(true)
+    fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/myToys/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
         setToys(data)
       })
-    setLoading(false)
+      setLoading(false)
   }, [user]);
-
+if(loading){
+  return<Loading></Loading>
+}
   const handleDelete = _id => {
     Swal.fire({
       title: 'Are you sure?',
@@ -31,7 +35,7 @@ const MyToys = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myToys/${_id}`, {
+        fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/myToys/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
@@ -73,9 +77,12 @@ const MyToys = () => {
           <tbody>
             {/* row 1 */}
             {
-              allToys.map((toy, i) => (
-                <tr>
-                  <th> {i + 1}</th>
+              allToys.map((toy, i) =>
+                (
+            
+                <tr key={toy._id}>
+               
+                  <th > {i + 1}</th>
                   <td>
                     <div className="avatar">
                       <div className="w-24 rounded"> <img src={toy?.pictureUrl} /> </div>
@@ -91,7 +98,7 @@ const MyToys = () => {
                   <th><Link> <button onClick={() => handleDelete(toy?._id)} className="btn btn-sm btn-outline btn-secondary">Delete</button></Link>
                   </th>
                 </tr>
-              ))}
+              ) )}
           </tbody>
         </table>
       </div>

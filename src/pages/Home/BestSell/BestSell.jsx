@@ -1,21 +1,25 @@
 import React, { useContext, useEffect, useState } from 'react';
 import BestSellCard from './BestSellCard';
 import { AuthContext } from '../../../provider/AuthProvider';
+import Loading from '../../Loading/Loading';
 
 const BestSell = () => {
-    const { setLoading } = useContext(AuthContext)
+    const {setLoading,loading} = useContext(AuthContext)
     const [toyProducts, setToyProducts] = useState([])
 
     useEffect(() => {
-        setLoading(true)
-        fetch(`http://localhost:5000/allToys`)
+    setLoading(true)
+        fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/allToys`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setToyProducts(data)
             })
-        setLoading(false)
+          setLoading(false)
     }, [])
+    if(loading){
+        return <Loading></Loading>
+    }
     return (
         <div className='mt-24 mb-24 container'>
             <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>BEST SELLERS THIS WEEK</h2>

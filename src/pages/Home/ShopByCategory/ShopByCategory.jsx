@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ShopCard from '../ShopCard/ShopCard';
 import './ShopBy.css'
+import { AuthContext } from '../../../provider/AuthProvider';
+import Loading from '../../Loading/Loading';
 
 const ShopByCategory = () => {
+  const {setLoading,loading} = useContext(AuthContext)
   const [toys, setToys] = useState([])
   const [activeTab, setActiveTab] = useState('Teddy Bear')
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys/${activeTab}`, {
+    setLoading(true)
+    fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/allToys/${activeTab}`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -19,8 +23,11 @@ const ShopByCategory = () => {
           setToys(data)
         }
       })
-
+      setLoading(false)
   }, [activeTab])
+  if(loading){
+    return <Loading></Loading>
+  }
   const handleTabActive = (activeState) => {
     setActiveTab(activeState)
   }

@@ -29,7 +29,7 @@ const AddAToy = () => {
       availableQuantity,
       detailDescription,
     }
-    fetch(`http://localhost:5000/postToy`, {
+    fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/postToy`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -53,7 +53,7 @@ const AddAToy = () => {
     <div className="bg-base-200 container">
       <div className="">
         <div className="card-body">
-          <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'> ADD A NEW TOY FOR YOUR TOY COLLECTION</h2>
+          <h2 className='text-center text-4xl text-pink-600 font-bold mb-8 '> ADD A NEW TOY FOR YOUR TOY COLLECTION</h2>
           <form onSubmit={handleSubmit} >
             <div className='md:grid md:grid-cols-3 gap-6'>
               <div className="form-control">
