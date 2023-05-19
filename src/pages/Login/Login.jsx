@@ -3,6 +3,7 @@ import login from '../../assets/lotti/login.json'
 import Lottie from "lottie-react";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const {loginUser,googleLogin} = useContext(AuthContext)
@@ -10,6 +11,7 @@ const Login = () => {
  const [success, setSuccess] = useState('')
  const navigate = useNavigate();
  const location = useLocation()
+ useTitle('KidZone | Login') 
  const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event =>{

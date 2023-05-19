@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateMyToy = () => {
-// const {id} = useParams() 
-// console.log('id',id)
   const toy = useLoaderData()
+  useTitle('KidZone | Update Toy') 
   console.log(toy._id)        
   const {_id,category,pictureUrl,toyName, price, rating, seller,  availableQuantity,
     sellerEmail,
     detailDescription} = toy;
-    // const [toys,setToys] = useState([])
-    // console.log(toys)
-
     const handleUpdate = event=>{
         event.preventDefault();
         const form = event.target;

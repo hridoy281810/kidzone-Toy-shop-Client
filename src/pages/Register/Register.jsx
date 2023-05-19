@@ -4,11 +4,13 @@ import login from '../../assets/lotti/login.json'
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
  const {createUser} = useContext(AuthContext)
  const [error, setError] = useState('')
  const [success, setSuccess] = useState('')
+ useTitle('KidZone | Register') 
     const handleRegistration = event =>{
    event.preventDefault()
    const form = event.target;

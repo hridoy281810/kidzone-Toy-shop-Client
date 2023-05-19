@@ -2,15 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
   const {user} = useContext(AuthContext)
-  
-    // const {_id,category,pictureUrl,toyName, price, rating, seller,  availableQuantity,
-    //     sellerEmail,
-    //     detailDescription} = toy;
    const [allToys , setAllToys] = useState([])
    const [searchText,setSearchText] = useState('')
+   useTitle('KidZone | All Toys') 
 
    useEffect(()=>{
    fetch(`http://localhost:5000/allToys`,{

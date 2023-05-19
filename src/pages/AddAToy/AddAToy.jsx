@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const AddAToy = () => {
     // const {_id,category,pictureUrl,toyName, price, rating, seller,  availableQuantity,
     //     sellerEmail,
     //     detailDescription} = toy;
    const {user} = useContext(AuthContext)
+   useTitle('KidZone | Add A Toy') 
    const handleSubmit =event=>{
     event.preventDefault();
     const form = event.target;

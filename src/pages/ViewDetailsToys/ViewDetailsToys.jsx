@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const ViewDetailsToys = () => {
-    
+  useTitle('KidZone | Details Toy') 
    const toy = useLoaderData()
    const {_id,category,pictureUrl,toyName, price, rating, seller,  availableQuantity,
     sellerEmail,

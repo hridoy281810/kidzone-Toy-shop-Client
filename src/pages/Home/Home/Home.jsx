@@ -4,8 +4,11 @@ import PhotoGallery from '../PhotoGallery/PhotoGallery';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import BestSell from '../BestSell/BestSell';
 import OurOffer from '../OurOffer/OurOffer';
+import useTitle from '../../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('KidZone | Home')
+
     return (
         <div >
            <Banner></Banner>
