@@ -17,7 +17,7 @@ const PhotoGallery = () => {
   }, []);
 
   return (
-    <div className="mt-24 mb-24 container gallery">
+    <div className="mt-24 mb-24 container ">
       <h2 className="text-center text-4xl text-pink-600 font-bold mb-8">PHOTO GALLERY</h2>
       <div className="grid md:grid-cols-2 gap-5 ">
         <div
