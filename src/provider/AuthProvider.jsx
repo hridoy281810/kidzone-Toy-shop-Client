@@ -43,7 +43,7 @@ const authInfo = {
     logOut
     }
     return (
-          <AuthContext.Provider value={authInfn}>
+          <AuthContext.Provider value={authInfo}>
                  {children}
           </AuthContext.Provider>
     );

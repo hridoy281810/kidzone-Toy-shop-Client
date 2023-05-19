@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AllToys = () => {
+  const {user} = useContext(AuthContext)
   
     // const {_id,category,pictureUrl,toyName, price, rating, seller,  availableQuantity,
     //     sellerEmail,
@@ -28,6 +31,18 @@ const AllToys = () => {
     })
   }
 
+  const handleViewDetailsAlert = (_id)=>{
+    if(user){
+     Swal.fire({
+      title: 'You can visit view details'
+     })
+    }
+    else {
+     Swal.fire({
+      title: 'You have to log in first to view details '
+     })
+    }
+   }
     return (
      <div className=''>
     <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
@@ -83,7 +98,7 @@ const AllToys = () => {
                    {toy?.availableQuantity}
                     </td>
                     <th>
-                   <Link to={`/singleToy/${toy?._id}`}> <button className="btn btn-sm btn-outline btn-secondary">View Details</button></Link>
+                   <Link to={`/singleToy/${toy?._id}`}> <button onClick={()=>handleViewDetailsAlert(toy?._id)} className="btn btn-sm btn-outline btn-secondary">View Details</button></Link>
                     </th>
                   </tr>
 

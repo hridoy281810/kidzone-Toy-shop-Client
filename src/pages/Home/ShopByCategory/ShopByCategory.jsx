@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import ShopCard from './ShopCard';
+import Swal from 'sweetalert2';
 
 const ShopByCategory = () => {
 
@@ -10,13 +11,18 @@ const ShopByCategory = () => {
   const [activeTab,setActiveTab] = useState('Teddy Bear')
 
   useEffect(()=>{
+
+  
    fetch(`http://localhost:5000/allToys/${activeTab}`,{
     method: 'GET'
    })
    .then(res=> res.json())
    .then(data => {
      console.log('tab active data',data)
-     setToys(data)
+    if(data){
+      setToys(data)
+    }
+   
    })
 
   },[activeTab])
