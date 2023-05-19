@@ -50,8 +50,9 @@ detailDescription,
             <div className="card-body">
               <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
           ADD A NEW TOY FOR YOUR TOY COLLECTION</h2>
+  
             <form onSubmit={handleSubmit} >
-
+        
            <div className='md:grid md:grid-cols-3 gap-6'>
            <div className="form-control">
                 <label className="label">

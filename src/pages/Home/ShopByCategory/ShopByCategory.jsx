@@ -44,7 +44,6 @@ const ShopByCategory = () => {
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
       <div className='md:grid md:grid-cols-3 gap-5'>
 
        {
@@ -53,7 +52,6 @@ const ShopByCategory = () => {
       </div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content </h2>
       <div className='md:grid md:grid-cols-3 gap-5'>
        {
         toys.map(toy => <ShopCard key={toy._id} toy={toy}></ShopCard>)
@@ -61,7 +59,6 @@ const ShopByCategory = () => {
       </div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 1</h2>
       <div className='md:grid md:grid-cols-3 gap-5'>
        {
         toys.map(toy => <ShopCard key={toy._id} toy={toy}></ShopCard>)

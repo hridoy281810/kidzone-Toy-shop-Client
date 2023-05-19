@@ -4,16 +4,18 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyToys = () => {
-    const {user} = useContext(AuthContext)
+    const {user,setLoading} = useContext(AuthContext)
     const [allToys,setToys] = useState([])
     
   useEffect(()=>{
+     setLoading(true)
     fetch(`http://localhost:5000/myToys/${user?.email}`)
     .then(res => res.json())
     .then(data => {
       console.log(data)
       setToys(data)
     })
+    setLoading(false)
   },[user]);
   
  const handleDelete = _id=>{
@@ -41,32 +43,23 @@ const MyToys = () => {
                       )
                     const remaining = allToys.filter(toys => toys._id !== _id)  
                     setToys(remaining)
-                }
-               
-        
-             })
-
-         
-        }
-      })
-
-
-
-     
-
-
-   
-     
+                } })} })
  }
-  
-
-
     return (
         <div className=''>
+            
         <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
         ALL TOYS IN MY STORE</h2>
+        <div className=" mt-4 mb-4 flex justify-center">
+        <select className="select select-secondary w-full max-w-xs">
+  <option disabled selected>Pick your favorite language</option>
+  <option>Java</option>
+  <option>Go</option>
+</select>
+
+</div>
         <div className="overflow-x-auto w-full">
-    
+      
             <table className="table w-full">
               {/* head */}
               <thead>

@@ -32,7 +32,7 @@ const Header = () => {
     </div>
     <div className="md:flex-1 grow header-logo">
           <Link to='/' className="  normal-case text-3xl font-bold text-pink-600 md:flex items-center ">
-            <img style={{width:'120px'}} src={logo} alt="" /> TOY STORE </Link>
+            <img style={{width:'120px'}} src={logo} alt="" /> KidZone </Link>
       
         </div>
   </div>
@@ -40,8 +40,14 @@ const Header = () => {
     <ul className="menu font-bold menu-horizontal px-1">
     <li> <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : 'default')}>Home</NavLink></li>
       <li> <NavLink to='/allToys' className={({ isActive }) => (isActive ? 'active' : 'default')}>All Toys</NavLink></li>
+     {
+      user &&  <>
       <li> <NavLink to='/myToys' className={({ isActive }) => (isActive ? 'active' : 'default')}>My Toys</NavLink></li>
-      <li> <NavLink  to='/addToy' className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toy</NavLink></li>
+      </>
+     }
+      {
+        user && <li> <NavLink  to='/addToy' className={({ isActive }) => (isActive ? 'active' : 'default')}>Add A Toy</NavLink></li>
+      }
       <li> <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>
     </ul>
   </div>
