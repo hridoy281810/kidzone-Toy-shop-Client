@@ -72,7 +72,7 @@ const AddAToy = () => {
                 <label className="label">
                   <span className="label-text">Seller Name</span>
                 </label>
-                <input required type="text" placeholder="seller name" name='seller' className="input input-bordered" />
+                <input required type="text" defaultValue={user?.displayName} placeholder="seller name" name='seller' className="input input-bordered" />
               </div>
               <div className="form-control">
                 <label className="label">
