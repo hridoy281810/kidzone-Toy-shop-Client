@@ -42,7 +42,7 @@ const AllToys = () => {
     }
    }
     return (
-     <div className=''>
+     <div className='container'>
     <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
     ALL TOYS IN OUR STORE</h2>
     <div className="overflow-x-auto w-full">

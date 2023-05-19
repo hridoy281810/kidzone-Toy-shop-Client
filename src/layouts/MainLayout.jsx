@@ -5,10 +5,11 @@ import Footer from '../pages/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div className='container'>
-
+        <div >
             <Header></Header>
+            <div className='min-h-[calc(100vh-418px)]'>
             <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

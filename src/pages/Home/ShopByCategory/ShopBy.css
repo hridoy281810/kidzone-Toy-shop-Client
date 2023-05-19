@@ -1,0 +1,19 @@
+
+@media screen and (max-width:576px) {
+   .tab-responsive{
+  gap: 20px;
+   }
+   .tab-img .card{
+    width: 290px;
+    margin-bottom: 20px;
+    
+   }
+   .lotti{
+    width: 300px;
+   }
+   .new .lotti{
+    width: 300px;
+    padding: 0;
+   }
+    
+  }

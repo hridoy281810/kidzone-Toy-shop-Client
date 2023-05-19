@@ -41,7 +41,7 @@ const PhotoGallery = () => {
   <a href="#item4" className="btn btn-xs">4</a>
 </div> */}
 
- <div className='mt-24 mb-24'>
+ <div className='mt-24 mb-24 container'>
    <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>PHOTO GALLERY</h2>
  <div className='md:grid grid-cols-2 gap-5 '>
  <div data-aos="fade-right"

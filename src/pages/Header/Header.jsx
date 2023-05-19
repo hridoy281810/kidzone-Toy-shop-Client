@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/logo1 (2).png'
 import { AuthContext } from '../../provider/AuthProvider';
+import './Header.css'
 
 const Header = () => {
     const {user,logOut} = useContext(AuthContext)
@@ -14,7 +15,8 @@ const Header = () => {
         })
       }
     return (
-        <>
+        <div className='bg-base-100  shadow-sm'>
+          <div className='container '>
           <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -30,9 +32,9 @@ const Header = () => {
         
       </ul>
     </div>
-    <div className="md:flex-1 grow header-logo">
+    <div className="md:flex-1 grow header-logo nav-logo-img">
           <Link to='/' className="  normal-case text-3xl font-bold text-pink-600 md:flex items-center ">
-            <img style={{width:'120px'}} src={logo} alt="" /> KidZone </Link>
+            <img className='overflow-hidden '  style={{width:'120px'}} src={logo} alt="" /> <span className='kidZone'> KidZone</span> </Link>
       
         </div>
   </div>
@@ -51,7 +53,7 @@ const Header = () => {
       <li> <NavLink className={({ isActive }) => (isActive ? 'active' : 'default')}>Blogs</NavLink></li>
     </ul>
   </div>
-  <div className="navbar-end">
+  <div className="navbar-end res-end">
     {
         user && <><div  title={user?.displayName} > <img 
         className='me-8' style={{height: '50px', width: '50px' , borderRadius: '50%', cursor: 'pointer'}} src={user?.photoURL}  alt="User Profile" />  </div>  </>
@@ -63,7 +65,8 @@ const Header = () => {
     
   </div>
 </div> 
-        </>
+        </div>
+        </div>
     );
 };
 

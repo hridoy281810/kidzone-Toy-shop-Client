@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div>
-           <footer className="footer p-10 bg-base-200 text-base-content">
-  <div>
+      <div className='bg-base-200'>
+          <div className=' container '>
+           <footer className="footer p-10 bg-base-200 text-base-content ">
+  <div className=''>
     <span className="footer-title">Information</span> 
     <Link className="link link-hover">About</Link> 
     <Link className="link link-hover">Shope</Link> 
@@ -46,6 +47,7 @@ const Footer = () => {
  
 </footer>
         </div>
+      </div>
     );
 };
 

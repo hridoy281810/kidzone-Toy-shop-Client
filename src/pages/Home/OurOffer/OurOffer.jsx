@@ -3,11 +3,11 @@ import offer from '../../../assets/lotti/gift (1).json'
 import Lottie from "lottie-react";
 const OurOffer = () => {
     return (
-        <div>
+        <div className='container'>
   <h2 className='text-center text-4xl text-pink-600 font-bold mb-8 border-dotted '>OUR OFFER </h2>
 
-             <div className='md:grid md:grid-cols-2'>
-             <div className="w-[700px]  ps-10 flex items-center">
+             <div className='md:grid md:grid-cols-2 new'>
+             <div className="w-[700px] lotti  ps-10 flex items-center">
           <Lottie animationData={offer} loop={true} />
               </div>
             <div >

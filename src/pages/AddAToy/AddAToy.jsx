@@ -45,7 +45,7 @@ detailDescription,
 
    }
     return (
-        <div className="bg-base-200">
+        <div className="bg-base-200 container">
         <div className="">
 
           <div className="">
