@@ -53,7 +53,7 @@ const UpdateMyToy = () => {
           })
     }
     return (
-        <div className="bg-base-200 container">
+        <div className="bg-base-200 ">
         <div className="">
 
           <div className="">
