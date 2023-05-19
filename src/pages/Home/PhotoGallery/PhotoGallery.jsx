@@ -23,13 +23,11 @@ const PhotoGallery = () => {
         <div
           data-aos="fade-right"
           data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
-        >
+          data-aos-easing="ease-in-sine">
           <img
             className="w-full max-w-full border-2 border-pink-600 rounded-lg"
             src={img1}
-            alt="Photo 1"
-          />
+            alt="Photo 1" />
         </div>
         <div className="grid md:h-full md:grid-cols-2 gap-5">
           <div
@@ -70,9 +68,9 @@ const PhotoGallery = () => {
       </div>
       <div className="grid md:grid-cols-2 gap-5 mt-5">
         <img
-           data-aos="flip-left"
-           data-aos-easing="ease-out-cubic"
-           data-aos-duration="2000"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
           className="max-w-full border-2 border-pink-600 rounded-lg"
           src={img7}
           alt="Photo 7"
