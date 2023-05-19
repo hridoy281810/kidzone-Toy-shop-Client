@@ -4,8 +4,8 @@ import useTitle from '../../hooks/useTitle';
 const Blog = () => {
     useTitle('KidZone | Blog')
     return (
-        <div>
-            <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>BEST BLOG SECTION</h2>
+        <div className='mt-10 mb-24'>
+            <h2 className='text-center text-4xl text-pink-600 font-bold mb-8 '>BEST BLOG SECTION</h2>
 
             <div className='md:grid md:grid-cols-2 gap-6 container'>
 
