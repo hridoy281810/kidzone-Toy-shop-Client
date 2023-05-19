@@ -1,20 +1,18 @@
 @media screen and (max-width:576px) {
   .kidZone {
     font-size: 24px !important;
-
   }
-  .nav-logo-img{
+  .nav-logo-img {
     margin-top: 10px;
   }
-  .res-end{
+  .res-end {
     flex-direction: column;
     padding-left: 60px;
     margin-top: 10px;
     justify-content: center;
     align-items: center;
   }
-  .res-end button{
-      margin-top: 10px;
-   
+  .res-end button {
+    margin-top: 10px;
   }
 }

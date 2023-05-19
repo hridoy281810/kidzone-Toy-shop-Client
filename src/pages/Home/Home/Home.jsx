@@ -11,11 +11,11 @@ const Home = () => {
 
     return (
         <div >
-           <Banner></Banner>
-           <PhotoGallery></PhotoGallery>
-           <ShopByCategory></ShopByCategory>
-           <BestSell></BestSell>
-           <OurOffer></OurOffer>
+            <Banner></Banner>
+            <PhotoGallery></PhotoGallery>
+            <ShopByCategory></ShopByCategory>
+            <BestSell></BestSell>
+            <OurOffer></OurOffer>
         </div>
     );
 };

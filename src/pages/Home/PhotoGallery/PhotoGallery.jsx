@@ -9,77 +9,43 @@ import img7 from '../../../assets/photo/7collac.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// import img8 from '../../assets/photo/9colla.png'
-// import img10 from '../../assets/photo/collaction10.png'
-
 const PhotoGallery = () => {
   AOS.init();
-    return (
-       <>
-       {/* <div className="carousel w-full">
-  <div id="item1" className="carousel-item w-full">
-    <img  style={{height: '400px'}} src={img1} className="w-full" />
-    <img style={{height: '400px'}} src={img2} className="w-full" />
-  </div> 
-  <div id="item2" className="carousel-item w-full">
-    <img style={{height: '400px'}} src={img3}  className="w-full" />
-    <img style={{height: '400px'}} src={img4}  className="w-full" />
-  </div> 
-  <div id="item3" className="carousel-item w-full">
-  <img style={{height: '400px'}} src={img5}  className="w-full" />
-  <img style={{height: '400px'}} src={img6}  className="w-full" />
-  </div> 
-  <div id="item4" className="carousel-item w-full">
-  <img style={{height: '400px'}} src={img7}  className="w-full" />
-  <img style={{height: '400px'}} src={img8}  className="w-full" />
-  </div>
-</div>  */}
-{/* <div className="flex justify-center w-full py-2 gap-2">
-  <a href="#item1" className="btn btn-xs">1</a> 
-  <a href="#item2" className="btn btn-xs">2</a> 
-  <a href="#item3" className="btn btn-xs">3</a> 
-  <a href="#item4" className="btn btn-xs">4</a>
-</div> */}
+  return (
+    <div className='mt-24 mb-24 container'>
+      <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>PHOTO GALLERY</h2>
+      <div className='md:grid grid-cols-2 gap-5 '>
+        <div data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine" >
+          <img style={{ border: '2px solid #ffc0cb', borderRadius: '15px' }} src={img1} className="" />
+        </div>
+        <div className=' grid h-full grid-cols-2 gap-5'>
+          <div data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="1500" className='grid grid-rows-2 gap-5'>
+            <img style={{ border: '2px solid #ffc0cb', borderRadius: '15px' }} src={img2} />
+            <img style={{ border: '2px solid #ffc0cb', borderRadius: '15px' }} src={img4} />
+          </div>
+          <div data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000" className='grid grid-rows-2 gap-5'>
+            <img style={{ border: '2px solid #ffc0cb', borderRadius: '15px' }} src={img3} />
+            <img style={{ border: '2px solid #ffc0cb', borderRadius: '15px' }} src={img5} />
+          </div>
+        </div>
+      </div>
+      <div className='md:grid grid-cols-2 gap-5 mt-5'>
+        <img data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine" style={{ border: '2px solid #ffc0cb', borderRadius: '15px' }} src={img7} />
+        <img data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine" style={{ border: '2px solid #ffc0cb', borderRadius: '15px' }} src={img6} />
+      </div>
+    </div>
 
- <div className='mt-24 mb-24 container'>
-   <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>PHOTO GALLERY</h2>
- <div className='md:grid grid-cols-2 gap-5 '>
- <div data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine" >
- <img style={{border: '2px solid #ffc0cb', borderRadius: '15px'}}   src={img1}  className="" />
- </div>
-<div className=' grid h-full grid-cols-2 gap-5'>
-
-<div  data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="1500" className='grid grid-rows-2 gap-5'>
- <img style={{border: '2px solid #ffc0cb', borderRadius: '15px'}}  src={img2}   />
- <img style={{border: '2px solid #ffc0cb', borderRadius: '15px'}}  src={img4}   />
- </div>
- <div data-aos="flip-left"
-     data-aos-easing="ease-out-cubic"
-     data-aos-duration="2000" className='grid grid-rows-2 gap-5'>
- <img style={{border: '2px solid #ffc0cb', borderRadius: '15px'}}   src={img3}   />
- <img style={{border: '2px solid #ffc0cb', borderRadius: '15px'}}   src={img5}   />
- </div>
-</div>
- </div>
- <div  className='md:grid grid-cols-2 gap-5 mt-5'>
-  
-   <img data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine" style={{border: '2px solid #ffc0cb', borderRadius: '15px'}}  src={img7}   />
-   <img data-aos="fade-left"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine" style={{border: '2px solid #ffc0cb', borderRadius: '15px'}}  src={img6}   />
-
-
-
- </div>
- </div>
-       </>
-    );
+  );
 };
 
 export default PhotoGallery;
