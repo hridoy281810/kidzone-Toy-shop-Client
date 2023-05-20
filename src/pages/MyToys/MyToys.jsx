@@ -3,27 +3,46 @@ import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useTitle from '../../hooks/useTitle';
-// import Loading from '../Loading/Loading';
+import Loading from '../Loading/Loading';
 
-// ,setLoading,loading
 const MyToys = () => {
-  const { user} = useContext(AuthContext)
+  const { user,setLoading,loading} = useContext(AuthContext)
   const [allToys, setToys] = useState([])
+  const [sortOrder, setSortOrder] = useState('desc');
+
   useTitle('KidZone | My Toys')
 
   useEffect(() => {
-// setLoading(true)
+setLoading(true)
     fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/myToys/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        setToys(data)
+        const sortedData = data.sort((a, b) => b.price - a.price);
+        setToys(sortedData)
       })
-      // setLoading(false)
+      setLoading(false)
   }, [user]);
-// if(loading){
-//   return<Loading></Loading>
-// }
+if(loading){
+  return<Loading></Loading>
+}
+
+const sortToys = (toys, order) => {
+  return toys.sort((a, b) => {
+    if (order === 'asc') {
+      return a.price - b.price;
+    } else {
+      return b.price - a.price;
+    }
+  });
+};
+
+const handleToggleSortOrder = () => {
+  const newSortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
+  const sortedData = sortToys(allToys, newSortOrder);
+  setToys(sortedData);
+  setSortOrder(newSortOrder);
+};
   const handleDelete = _id => {
     Swal.fire({
       title: 'Are you sure?',
@@ -41,6 +60,7 @@ const MyToys = () => {
           .then(res => res.json())
           .then(data => {
             console.log(data)
+         
             if (data.deletedCount > 0) {
               Swal.fire(
                 'Deleted!',
@@ -58,6 +78,11 @@ const MyToys = () => {
     <div className='container'>
       <h2 className='text-center text-4xl text-pink-600 font-bold mb-8 mt-4'>
         ALL TOYS IN MY STORE</h2>
+        <div className="text-center mb-4">
+        <button className="btn btn-sm btn-outline btn-secondary mr-2" onClick={handleToggleSortOrder}>
+          {sortOrder === 'desc' ? 'Sort Ascending' : 'Sort Descending'}
+        </button>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
