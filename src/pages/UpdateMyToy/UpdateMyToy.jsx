@@ -51,7 +51,8 @@ const UpdateMyToy = () => {
       })
   }
   return (
-    <div className="bg-base-200 container">
+    <div className='bg-green-300'>
+      <div className=" container">
       <div className="">
         <div className="">
           <div className="card-body">
@@ -101,6 +102,7 @@ const UpdateMyToy = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

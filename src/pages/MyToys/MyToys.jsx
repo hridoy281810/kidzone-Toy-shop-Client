@@ -6,7 +6,8 @@ import useTitle from '../../hooks/useTitle';
 import Loading from '../Loading/Loading';
 
 const MyToys = () => {
-  const { user,setLoading,loading} = useContext(AuthContext)
+  const { user} = useContext(AuthContext)
+  const [loading, setLoading] = useState(true)
   const [allToys, setToys] = useState([])
   const [sortOrder, setSortOrder] = useState('desc');
 
@@ -23,6 +24,7 @@ setLoading(true)
       })
       setLoading(false)
   }, [user]);
+
 if(loading){
   return<Loading></Loading>
 }

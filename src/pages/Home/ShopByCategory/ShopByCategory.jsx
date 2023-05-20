@@ -7,7 +7,7 @@ import { AuthContext } from '../../../provider/AuthProvider';
 import Loading from '../../Loading/Loading';
 
 const ShopByCategory = () => {
-  const {setLoading,loading} = useContext(AuthContext)
+  const [loading, setLoading] = useState(true)
   const [toys, setToys] = useState([])
   const [activeTab, setActiveTab] = useState('Teddy Bear')
 

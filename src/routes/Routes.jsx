@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import ViewDetailsToys from "../pages/ViewDetailsToys/ViewDetailsToys";
+import ViewDetailsToy from "../pages/ViewDetailsToy/ViewDetailsToy";
 import PrivetRoute from "./PrivetRoute";
 import AllToys from "../pages/AllToys/AllToys";
 import AddAToy from "../pages/AddAToy/AddAToy";
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
         },
         {
     path: 'singleToy/:id',
-    element:<PrivetRoute> <ViewDetailsToys></ViewDetailsToys></PrivetRoute>,
+    element:<PrivetRoute> <ViewDetailsToy></ViewDetailsToy></PrivetRoute>,
     loader: ({params})=> fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/allToy/${params.id}`)
         },
        
