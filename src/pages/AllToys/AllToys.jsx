@@ -3,31 +3,31 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useTitle from '../../hooks/useTitle';
-import Loading from '../Loading/Loading';
-
+// import Loading from '../Loading/Loading';
+// ,setLoading,loading
 const AllToys = () => {
-  const {user,setLoading,loading} = useContext(AuthContext)
+  const {user} = useContext(AuthContext)
    const [allToys , setAllToys] = useState([])
    const [searchText,setSearchText] = useState('')
    useTitle('KidZone | All Toys') 
  
    useEffect(()=>{
-    setLoading(true)
+    // setLoading(true)
    fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/allToys`,{
     method: 'GET'
    })
    .then(res => res.json())
    .then(data => {
     setAllToys(data)
-setLoading(false)
+// setLoading(false)
    console.log(data)
    })
    
    },[])
-   if(loading){
-    return <Loading></Loading>
+  //  if(loading){
+  //   return <Loading></Loading>
     
-      }
+  //     }
 
    const handleSearchText = ()=>{
     fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/toyNameSearch/${searchText}`)

@@ -3,27 +3,27 @@ import { AuthContext } from '../../provider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useTitle from '../../hooks/useTitle';
-import Loading from '../Loading/Loading';
-import { key } from 'localforage';
+// import Loading from '../Loading/Loading';
 
+// ,setLoading,loading
 const MyToys = () => {
-  const { user,setLoading,loading} = useContext(AuthContext)
+  const { user} = useContext(AuthContext)
   const [allToys, setToys] = useState([])
   useTitle('KidZone | My Toys')
 
   useEffect(() => {
-setLoading(true)
+// setLoading(true)
     fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/myToys/${user?.email}`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
         setToys(data)
       })
-      setLoading(false)
+      // setLoading(false)
   }, [user]);
-if(loading){
-  return<Loading></Loading>
-}
+// if(loading){
+//   return<Loading></Loading>
+// }
   const handleDelete = _id => {
     Swal.fire({
       title: 'Are you sure?',
