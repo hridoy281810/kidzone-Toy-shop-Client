@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const UpdateMyToy = () => {
   const toy = useLoaderData()
   useTitle('KidZone | Update Toy')
-  const { _id, toyName, price, rating, availableQuantity,detailDescription } = toy;
+  const { _id, toyName, price, rating, availableQuantity, detailDescription } = toy;
   const handleUpdate = event => {
     event.preventDefault();
     const form = event.target;
@@ -53,56 +53,56 @@ const UpdateMyToy = () => {
   return (
     <div className='bg-green-300'>
       <div className=" container">
-      <div className="">
         <div className="">
-          <div className="card-body">
-            <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
-              UPDATE YOUR TOY COLLECTION</h2>
-            <form onSubmit={handleUpdate} >
-              <div className='md:grid md:grid-cols-3 gap-6'>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Photo URL</span>
-                  </label>
-                  <input required type="url" defaultValue='https://i.ibb.co/DWKwyTW/tedi3.jpg' name='pictureUrl' placeholder="photo url" className="input input-bordered" />
+          <div className="">
+            <div className="card-body">
+              <h2 className='text-center text-4xl text-pink-600 font-bold mb-8'>
+                UPDATE YOUR TOY COLLECTION</h2>
+              <form onSubmit={handleUpdate} >
+                <div className='md:grid md:grid-cols-3 gap-6'>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Photo URL</span>
+                    </label>
+                    <input required type="url" defaultValue='https://i.ibb.co/DWKwyTW/tedi3.jpg' name='pictureUrl' placeholder="photo url" className="input input-bordered" />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Toy Name</span>
+                    </label>
+                    <input required type="text" defaultValue={toyName} placeholder="toyName" name='toyName' className="input input-bordered" />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Price</span>
+                    </label>
+                    <input required type="text" name='price' defaultValue={price} placeholder="Price" className="input input-bordered" />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Rating</span>
+                    </label>
+                    <input required type="text" name='rating' defaultValue={rating} placeholder="Rating" className="input input-bordered" />
+                  </div>
+                  <div className="form-control">
+                    <label className="label">
+                      <span className="label-text">Available Quantity</span>
+                    </label>
+                    <input required type="number" defaultValue={availableQuantity} name='availableQuantity' placeholder="Available Quantity" className="input input-bordered" />
+                  </div>
+                  <div className="form-control mb-6">
+                    <label className="label">
+                      <span className="label-text">Detail Description</span>
+                    </label>
+                    <textarea defaultValue={detailDescription} name='detailDescription' className="textarea" placeholder="Detail Description"></textarea>
+                  </div>
                 </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Toy Name</span>
-                  </label>
-                  <input required type="text" defaultValue={toyName} placeholder="toyName" name='toyName' className="input input-bordered" />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Price</span>
-                  </label>
-                  <input required type="text" name='price' defaultValue={price} placeholder="Price" className="input input-bordered" />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Rating</span>
-                  </label>
-                  <input required type="text" name='rating' defaultValue={rating} placeholder="Rating" className="input input-bordered" />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text">Available Quantity</span>
-                  </label>
-                  <input required type="number" defaultValue={availableQuantity} name='availableQuantity' placeholder="Available Quantity" className="input input-bordered" />
-                </div>
-                <div className="form-control mb-6">
-                  <label className="label">
-                    <span className="label-text">Detail Description</span>
-                  </label>
-                  <textarea  defaultValue={detailDescription} name='detailDescription' className="textarea" placeholder="Detail Description"></textarea>
-                </div>
-              </div>
-              <button className="btn mb-28 btn-block btn-outline btn-secondary">Update Now</button>
-            </form>
+                <button className="btn mb-28 btn-block btn-outline btn-secondary">Update Now</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

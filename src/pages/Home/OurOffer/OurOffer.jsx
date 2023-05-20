@@ -13,29 +13,29 @@ const OurOffer = () => {
         </div>
         <div >
           <div className='p-10 bg-pink-200 mb-6 rounded border-emerald-300 border-dotted '>
-       <div className='flex items-center gap-8'>
-       <span className='text-6xl'> <FcShop></FcShop></span>
-            <div><h2 className='text-2xl font-bold '>
-            You will find all animal toys in our store</h2>
-            <p>teddy bear, horse, dinosaur, dogs, cat, unicorn, cows, etc.</p></div>
-       </div>
+            <div className='flex items-center gap-8'>
+              <span className='text-6xl'> <FcShop></FcShop></span>
+              <div><h2 className='text-2xl font-bold '>
+                You will find all animal toys in our store</h2>
+                <p>teddy bear, horse, dinosaur, dogs, cat, unicorn, cows, etc.</p></div>
+            </div>
           </div>
           <div className='p-10 bg-green-200 mb-6 rounded border-emerald-300 border-dotted '>
-     
-           <div className='flex items-center gap-8'>
-          <span className='text-6xl'> <FcOnlineSupport></FcOnlineSupport></span>
-           <div><h2 className='text-2xl font-bold '>
-            24/7 online service </h2>
-            <p>Please contact us on the below contact information to resolve any issue</p></div>
-           </div>
+
+            <div className='flex items-center gap-8'>
+              <span className='text-6xl'> <FcOnlineSupport></FcOnlineSupport></span>
+              <div><h2 className='text-2xl font-bold '>
+                24/7 online service </h2>
+                <p>Please contact us on the below contact information to resolve any issue</p></div>
+            </div>
           </div>
           <div className='p-10 bg-blue-200 mb-6 rounded border-emerald-300 border-dotted '>
-         <div className='flex items-center gap-8'>
-         <span className='text-6xl'> <FcRules></FcRules></span>
-            <div><h2 className='text-2xl font-bold '>
-            If there is any problem with the product within seven days, we will change it</h2>
-            <p>After seven days, we will not provide any service</p></div>
-         </div>
+            <div className='flex items-center gap-8'>
+              <span className='text-6xl'> <FcRules></FcRules></span>
+              <div><h2 className='text-2xl font-bold '>
+                If there is any problem with the product within seven days, we will change it</h2>
+                <p>After seven days, we will not provide any service</p></div>
+            </div>
           </div>
         </div>
       </div>

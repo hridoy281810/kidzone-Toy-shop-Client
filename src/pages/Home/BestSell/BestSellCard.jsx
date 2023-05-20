@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BestSellCard = ({ toy }) => {
-  const {  pictureUrl, toyName, price, availableQuantity,
+  const { pictureUrl, toyName, price, availableQuantity,
   } = toy;
   return (
     <div className="card w-96 bg-base-100 shadow-xl">

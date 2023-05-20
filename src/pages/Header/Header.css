@@ -2,9 +2,11 @@
   .kidZone {
     font-size: 24px !important;
   }
+
   .nav-logo-img {
     margin-top: 10px;
   }
+
   .res-end {
     flex-direction: column;
     padding-left: 60px;
@@ -12,6 +14,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .res-end button {
     margin-top: 10px;
   }

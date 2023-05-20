@@ -4,20 +4,20 @@ import { AuthContext } from '../../../provider/AuthProvider';
 import Loading from '../../Loading/Loading';
 
 const BestSell = () => {
-    const {setLoading,loading} = useContext(AuthContext)
+    const { setLoading, loading } = useContext(AuthContext)
     const [toyProducts, setToyProducts] = useState([])
 
     useEffect(() => {
-    setLoading(true)
+        setLoading(true)
         fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/allToys`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setToyProducts(data)
             })
-          setLoading(false)
+        setLoading(false)
     }, [])
-    if(loading){
+    if (loading) {
         return <Loading></Loading>
     }
     return (

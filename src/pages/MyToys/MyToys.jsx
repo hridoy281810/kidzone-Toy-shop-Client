@@ -6,7 +6,7 @@ import useTitle from '../../hooks/useTitle';
 import Loading from '../Loading/Loading';
 
 const MyToys = () => {
-  const { user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const [loading, setLoading] = useState(true)
   const [allToys, setToys] = useState([])
   const [sortOrder, setSortOrder] = useState('desc');
@@ -14,7 +14,7 @@ const MyToys = () => {
   useTitle('KidZone | My Toys')
 
   useEffect(() => {
-setLoading(true)
+    setLoading(true)
     fetch(`https://assignment-eleven-server-hridoy281810.vercel.app/myToys/${user?.email}`)
       .then(res => res.json())
       .then(data => {
@@ -22,29 +22,29 @@ setLoading(true)
         const sortedData = data.sort((a, b) => b.price - a.price);
         setToys(sortedData)
       })
-      setLoading(false)
+    setLoading(false)
   }, [user]);
 
-if(loading){
-  return<Loading></Loading>
-}
+  if (loading) {
+    return <Loading></Loading>
+  }
 
-const sortToys = (toys, order) => {
-  return toys.sort((a, b) => {
-    if (order === 'asc') {
-      return a.price - b.price;
-    } else {
-      return b.price - a.price;
-    }
-  });
-};
+  const sortToys = (toys, order) => {
+    return toys.sort((a, b) => {
+      if (order === 'asc') {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+  };
 
-const handleToggleSortOrder = () => {
-  const newSortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
-  const sortedData = sortToys(allToys, newSortOrder);
-  setToys(sortedData);
-  setSortOrder(newSortOrder);
-};
+  const handleToggleSortOrder = () => {
+    const newSortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
+    const sortedData = sortToys(allToys, newSortOrder);
+    setToys(sortedData);
+    setSortOrder(newSortOrder);
+  };
   const handleDelete = _id => {
     Swal.fire({
       title: 'Are you sure?',
@@ -62,7 +62,7 @@ const handleToggleSortOrder = () => {
           .then(res => res.json())
           .then(data => {
             console.log(data)
-         
+
             if (data.deletedCount > 0) {
               Swal.fire(
                 'Deleted!',
@@ -80,7 +80,7 @@ const handleToggleSortOrder = () => {
     <div className='container'>
       <h2 className='text-center text-4xl text-pink-600 font-bold mb-8 mt-4'>
         ALL TOYS IN MY STORE</h2>
-        <div className="text-center mb-4">
+      <div className="text-center mb-4">
         <button className="btn btn-sm btn-outline btn-secondary mr-2" onClick={handleToggleSortOrder}>
           {sortOrder === 'desc' ? 'Sort Ascending' : 'Sort Descending'}
         </button>
@@ -105,10 +105,10 @@ const handleToggleSortOrder = () => {
             {/* row 1 */}
             {
               allToys.map((toy, i) =>
-                (
-            
+              (
+
                 <tr key={toy._id}>
-               
+
                   <th > {i + 1}</th>
                   <td>
                     <div className="avatar">
@@ -125,7 +125,7 @@ const handleToggleSortOrder = () => {
                   <th><Link> <button onClick={() => handleDelete(toy?._id)} className="btn btn-sm btn-outline btn-secondary">Delete</button></Link>
                   </th>
                 </tr>
-              ) )}
+              ))}
           </tbody>
         </table>
       </div>

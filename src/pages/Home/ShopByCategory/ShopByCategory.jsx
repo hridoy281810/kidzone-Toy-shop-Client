@@ -23,9 +23,9 @@ const ShopByCategory = () => {
           setToys(data)
         }
       })
-      setLoading(false)
+    setLoading(false)
   }, [activeTab])
-  if(loading){
+  if (loading) {
     return <Loading></Loading>
   }
   const handleTabActive = (activeState) => {
