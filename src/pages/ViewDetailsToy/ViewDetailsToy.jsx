@@ -17,7 +17,7 @@ const ViewDetailsToy = () => {
         <div className="hero-content flex-col lg:flex-row gap-20">
           <img src={pictureUrl} className="max-w-sm rounded-lg shadow-2xl" />
           <div>
-            <h className="text-5xl font-bold">{toyName}</h>
+            <h1 className="text-5xl font-bold">{toyName}</h1>
             <p className="pt-4 text-xl "><strong>Category Name:</strong> {category}</p>
             <p className="pt-4 text-xl "><strong>Seller Name:</strong> {seller}</p>
             <p className="pt-4 text-xl "><strong>Seller Email:</strong> {sellerEmail}</p>
